@@ -1,0 +1,38 @@
+diff --git a/resources/content-server/index-generated.html b/resources/content-server/index-generated.html
+index 2b671eb..7568872 100644
+--- a/resources/content-server/index-generated.html
++++ b/resources/content-server/index-generated.html
+@@ -26242,10 +26242,14 @@ return this.__repr__();
+                 if (start) {
+                     if (r.startContainer !== p.offsetNode || r.startOffset !== p.offset) {
+                         r.setStart(p.offsetNode, p.offset);
++                       sel.removeAllRanges();
++                       sel.addRange(r);
+                     }
+                 } else {
+                     if (r.endContainer !== p.offsetNode || r.endOffset !== p.offset) {
+                         r.setEnd(p.offsetNode, p.offset);
++                       sel.removeAllRanges();
++                       sel.addRange(r);
+                     }
+                 }
+             }
+diff --git a/resources/viewer.js b/resources/viewer.js
+index 5b8b028..6052f1c 100644
+--- a/resources/viewer.js
++++ b/resources/viewer.js
+@@ -25413,10 +25413,14 @@ return this.__repr__();
+                 if (start) {
+                     if (r.startContainer !== p.offsetNode || r.startOffset !== p.offset) {
+                         r.setStart(p.offsetNode, p.offset);
++                       sel.removeAllRanges();
++                       sel.addRange(r);
+                     }
+                 } else {
+                     if (r.endContainer !== p.offsetNode || r.endOffset !== p.offset) {
+                         r.setEnd(p.offsetNode, p.offset);
++                       sel.removeAllRanges();
++                       sel.addRange(r);
+                     }
+                 }
+             }
